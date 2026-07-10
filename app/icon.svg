@@ -1,0 +1,14 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="22%" stop-color="#cfe6ff"/>
+      <stop offset="42%" stop-color="#6d9df0"/>
+      <stop offset="52%" stop-color="#1b2670"/>
+      <stop offset="55%" stop-color="#f4f6ff"/>
+      <stop offset="74%" stop-color="#9a6df0"/>
+      <stop offset="100%" stop-color="#e14fd0"/>
+    </linearGradient>
+  </defs>
+  <text x="32" y="49" text-anchor="middle" font-family="Arial Black, Arial, Helvetica, sans-serif" font-weight="900" font-size="46" letter-spacing="-2" fill="url(#chrome)" stroke="#160e38" stroke-width="1.2">MJ</text>
+</svg>

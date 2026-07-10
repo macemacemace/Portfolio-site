@@ -12,11 +12,15 @@ import {
   SiExpress,
   SiTailwindcss,
   SiGit,
-  SiGithub,
   SiPython,
   SiRedis,
   SiLinux,
+  SiSpringboot,
+  SiGraphql,
+  SiHtml5,
+  SiCss,
 } from "react-icons/si";
+import { FaJava } from "react-icons/fa6";
 import { FiCode } from "react-icons/fi";
 
 const icons: Record<string, IconType> = {
@@ -32,22 +36,56 @@ const icons: Record<string, IconType> = {
   Express: SiExpress,
   "Tailwind CSS": SiTailwindcss,
   Git: SiGit,
-  GitHub: SiGithub,
   Python: SiPython,
   Redis: SiRedis,
   Linux: SiLinux,
+  "Spring Boot": SiSpringboot,
+  Java: FaJava,
+  GraphQL: SiGraphql,
+  HTML: SiHtml5,
+  CSS: SiCss,
+};
+
+// Official brand colors. Monochrome logos (Next.js, Express) are left out
+// so they fall back to the theme color and stay visible in dark + light mode.
+const colors: Record<string, string> = {
+  "Node.js": "#5FA04E",
+  TypeScript: "#3178C6",
+  JavaScript: "#F7DF1E",
+  PostgreSQL: "#4169E1",
+  MySQL: "#4479A1",
+  MongoDB: "#47A248",
+  Docker: "#2496ED",
+  React: "#61DAFB",
+  "Tailwind CSS": "#06B6D4",
+  Git: "#F05032",
+  Python: "#3776AB",
+  Redis: "#FF4438",
+  Linux: "#FCC624",
+  "Spring Boot": "#6DB33F",
+  Java: "#E76F00",
+  GraphQL: "#E10098",
+  HTML: "#E34F26",
+  CSS: "#1572B6",
 };
 
 export function TechIcon({ name, className }: { name: string; className?: string }) {
   const Icon = icons[name] ?? FiCode;
-  return <Icon className={className} aria-hidden />;
+  const color = colors[name];
+  return (
+    <Icon
+      className={className}
+      style={color ? { color } : undefined}
+      aria-hidden
+    />
+  );
 }
 
 export default function TechChip({ name }: { name: string }) {
   return (
-    <span className="flex items-center gap-2 rounded-full border border-line-2 bg-card-2 px-3 py-1.5 text-xs text-ink">
-      <TechIcon name={name} className="h-3.5 w-3.5 text-accent" />
-      {name}
-    </span>
+    <div className="flex w-20 flex-col items-center gap-2 transition-transform hover:scale-110">
+      <TechIcon name={name} className="h-10 w-10 text-ink" />
+      <span className="text-center text-xs font-medium text-ink">{name}</span>
+    </div>
   );
 }

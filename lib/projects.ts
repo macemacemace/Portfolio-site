@@ -1,27 +1,42 @@
 export interface Project {
+  slug: string;
   title: string;
   description: string;
+  longDescription: string;
   tech: string[];
+  banner?: string;
   github?: string;
   demo?: string;
-  featured?: boolean;
 }
 
-// Add your real projects here.
+// Add your real projects here. `banner` is an image path inside /public,
+// e.g. put banner.png in public/projects/ and set banner: "/projects/banner.png".
 export const projects: Project[] = [
   {
-    title: "Portfolio & Knowledge Base",
-    description:
-      "This website — a Next.js portfolio with a Markdown-driven knowledge base where I document everything I learn.",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    github: "https://github.com/yourusername/site",
-    featured: true,
+    slug: "project-one",
+    title: "-----",
+    description: "----- ----- ----- ----- ----- -----",
+    longDescription:
+      "----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----",
+    tech: ["Node.js", "TypeScript", "PostgreSQL", "Docker"],
+    github: "https://github.com/macemacemace",
   },
   {
-    title: "Example REST API",
-    description:
-      "Placeholder project — replace with a real one. A REST API with authentication, rate limiting and a PostgreSQL database.",
-    tech: ["Node.js", "Express", "PostgreSQL"],
-    featured: true,
+    slug: "project-two",
+    title: "-----",
+    description: "----- ----- ----- ----- ----- -----",
+    longDescription:
+      "----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----",
+    tech: ["Next.js", "React", "Tailwind CSS"],
+    github: "https://github.com/macemacemace",
+  },
+  {
+    slug: "project-three",
+    title: "-----",
+    description: "----- ----- ----- ----- ----- -----",
+    longDescription:
+      "----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----",
+    tech: ["JavaScript", "Express", "MongoDB"],
+    github: "https://github.com/macemacemace",
   },
 ];

@@ -1,23 +1,36 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import TechChip from "@/components/TechChip";
+import PixelText from "@/components/PixelText";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
-import { FiDownload, FiMusic, FiFilm, FiTv, FiChevronDown } from "react-icons/fi";
+import { FiDownload, FiChevronDown, FiMapPin } from "react-icons/fi";
 
 const technologies = [
-  "Node.js",
-  "TypeScript",
   "JavaScript",
+  "Node.js",
+  "React",
+  "HTML",
+  "CSS",
+  "Java",
+  "Spring Boot",
+  "Python",
   "PostgreSQL",
   "Docker",
-  "React",
-  "Next.js",
   "Git",
 ];
 
 const favourites = [
-  { icon: FiMusic, label: "Favourite song", value: "-----" },
-  { icon: FiFilm, label: "Favourite movie", value: "-----" },
-  { icon: FiTv, label: "Favourite series", value: "-----" },
+  { type: "Show", title: "Attack on Titan", image: "/favourites/show.webp" },
+  {
+    type: "Song",
+    title: "Late At Night — Vanna Rainelle",
+    image: "/favourites/song.webp",
+  },
+  {
+    type: "Movie",
+    title: "The Lord of the Rings: The Return of the King",
+    image: "/favourites/movie.webp",
+  },
 ];
 
 export default function Home() {
@@ -25,27 +38,38 @@ export default function Home() {
     <div>
       {/* First viewport: hero + tech box + scroll hint */}
       <section className="flex min-h-[calc(100dvh-11rem)] flex-col">
-        <div className="flex flex-1 flex-col-reverse items-start gap-10 py-8 sm:flex-row sm:items-center sm:gap-16">
-          <div className="flex-1">
+        <div className="flex flex-1 flex-col-reverse items-start gap-10 py-8 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
+          <div className="max-w-xl">
             <h1 className="text-5xl font-bold leading-tight text-ink sm:text-6xl lg:text-7xl">
-            Martin
+            <PixelText text="Martin" />
             <br />
-            <span className="text-accent">Jakovoski</span>
+            <PixelText text="Jakovoski" className="text-accent" />
           </h1>
+          <p className="mt-4 flex items-center gap-2 text-lg font-medium text-accent">
+            <FiMapPin className="h-4 w-4" />
+            Skopje, Macedonia
+          </p>
           <p className="mt-6 max-w-lg leading-relaxed text-ink-2 lg:text-lg">
-            ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-            ----- ----- ----- ----- ----- ----- ----- -----
+            I&apos;m a full-stack software engineer who specializes in building
+            practical, reliable applications with JavaScript. Currently in my
+            final year at University American College, I&apos;ve been coding for
+            about three years now, and I&apos;m always seeking new knowledge to
+            push my skills further.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/macemacemace"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex h-10 w-10 items-center justify-center rounded-md border border-line-2 text-ink-2 transition-colors hover:border-accent hover:text-accent"
               aria-label="GitHub"
             >
               <FaGithub className="h-5 w-5" />
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/martin-jakovoski-00a246300/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex h-10 w-10 items-center justify-center rounded-md border border-line-2 text-ink-2 transition-colors hover:border-accent hover:text-accent"
               aria-label="LinkedIn"
             >
@@ -80,14 +104,9 @@ export default function Home() {
         <h2 className="text-sm font-semibold uppercase tracking-wider text-accent">
           Technologies I work with
         </h2>
-        <div className="mt-4 flex flex-wrap gap-2.5">
+        <div className="mt-6 flex flex-wrap justify-center gap-x-8 gap-y-6 sm:justify-start">
           {technologies.map((tech) => (
-            <span
-              key={tech}
-              className="rounded-full border border-line-2 bg-card-2 px-4 py-1.5 text-xs text-ink"
-            >
-              -----
-            </span>
+            <TechChip key={tech} name={tech} />
           ))}
           </div>
         </div>
@@ -103,37 +122,41 @@ export default function Home() {
       {/* About me — revealed on scroll */}
       <section id="about" className="mt-24 scroll-mt-24 pb-8">
         <Reveal>
-          <h2 className="text-3xl font-bold text-ink">About me</h2>
-          <div className="mt-6 grid gap-8 sm:grid-cols-[1.5fr_1fr]">
-            <div className="space-y-4 leading-relaxed text-ink-2">
-              <p>
-                ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-                ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-              </p>
-              <p>
-                ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-                ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+          <div className="grid gap-10 sm:grid-cols-2 sm:items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-ink">About me</h2>
+              <p className="mt-6 max-w-md text-2xl font-medium leading-relaxed text-ink-2">
+                Beyond the professional side, here&apos;s what I&apos;m into:
               </p>
             </div>
-            <Reveal delay={200}>
-              <div className="rounded-xl border border-line bg-card p-5">
+            <Reveal delay={150}>
+              <div>
                 <h3 className="flex items-center gap-2 text-sm font-semibold text-accent">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
                     <path d="M19 14c1.5-1.4 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2C10.5 3.5 9.3 3 7.5 3A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.1 3 5.5l7 7Z" />
                   </svg>
                   Favourites
                 </h3>
-                <ul className="mt-4 space-y-4">
+                <div className="mt-4 grid grid-cols-3 gap-4">
                   {favourites.map((fav) => (
-                    <li key={fav.label} className="flex items-start gap-3">
-                      <fav.icon className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                      <div>
-                        <p className="text-xs text-ink-3">{fav.label}</p>
-                        <p className="text-sm text-ink">{fav.value}</p>
+                    <div key={fav.type} className="group">
+                      <div className="relative aspect-[2/3] overflow-hidden rounded-lg border border-line bg-card-2">
+                        <Image
+                          src={fav.image}
+                          alt={fav.title}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
                       </div>
-                    </li>
+                      <p className="mt-2 text-xs font-semibold text-accent">
+                        {fav.type}
+                      </p>
+                      <p className="text-xs leading-snug text-ink-2">
+                        {fav.title}
+                      </p>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             </Reveal>
           </div>
