@@ -22,11 +22,10 @@ const alfaSlab = Alfa_Slab_One({
 
 export const metadata: Metadata = {
   title: {
-    default: "Martin Jakovoski — Backend & Full-Stack Developer",
+    default: "Martin Jakovoski",
     template: "%s | Martin Jakovoski",
   },
-  description:
-    "Portfolio and blog of Martin Jakovoski, backend & full-stack developer.",
+  description: "Portfolio and blog of Martin Jakovoski.",
 };
 
 const themeInit = `
@@ -40,7 +39,7 @@ try {
 
 const navLinks = [
   { href: "/projects", label: "Projects" },
-  { href: "#", label: "Blog" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
 
