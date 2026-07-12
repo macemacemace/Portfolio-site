@@ -14,7 +14,7 @@ export default function ProjectsPage() {
     <div className="pt-4">
       <h1 className="text-4xl font-bold text-ink">Projects</h1>
       <p className="mt-3 max-w-xl text-ink-2">
-        ----- ----- ----- ----- ----- ----- ----- -----
+        Some of the finished and unfinished projects I&apos;ve built.
       </p>
       <ul className="mt-10 space-y-4">
         {projects.map((project) => (

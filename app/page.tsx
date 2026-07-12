@@ -2,6 +2,7 @@ import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import TechChip from "@/components/TechChip";
 import PixelText from "@/components/PixelText";
+import PhotoRotator from "@/components/PhotoRotator";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { FiDownload, FiChevronDown, FiMapPin } from "react-icons/fi";
 
@@ -85,18 +86,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="relative mx-auto h-52 w-44 shrink-0 sm:mx-0 sm:h-64 sm:w-56 lg:h-80 lg:w-72">
-          <div className="absolute right-0 top-3 h-full w-full rounded-xl border-2 border-accent" />
-          <div className="absolute right-3 top-0 h-full w-full overflow-hidden rounded-xl bg-accent-soft">
-            <Image
-              src="/me.svg"
-              alt="Photo of Martin Jakovoski"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-        </div>
+        <PhotoRotator />
         </div>
 
         {/* Technologies box */}

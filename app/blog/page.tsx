@@ -13,9 +13,7 @@ export default function BlogPage() {
   return (
     <div className="pt-4">
       <h1 className="text-4xl font-bold text-ink">Blog</h1>
-      <p className="mt-3 max-w-xl text-ink-2">
-        Notes and write-ups on what I&apos;m learning and building.
-      </p>
+      <p className="mt-3 max-w-xl text-ink-2">Thoughts and updates.</p>
 
       {posts.length === 0 ? (
         <p className="mt-10 text-ink-3">No posts yet — check back soon.</p>

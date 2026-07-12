@@ -19,6 +19,8 @@ import {
   SiGraphql,
   SiHtml5,
   SiCss,
+  SiVite,
+  SiReactrouter,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa6";
 import { FiCode } from "react-icons/fi";
@@ -44,6 +46,8 @@ const icons: Record<string, IconType> = {
   GraphQL: SiGraphql,
   HTML: SiHtml5,
   CSS: SiCss,
+  Vite: SiVite,
+  "React Router": SiReactrouter,
 };
 
 // Official brand colors. Monochrome logos (Next.js, Express) are left out
@@ -67,6 +71,8 @@ const colors: Record<string, string> = {
   GraphQL: "#E10098",
   HTML: "#E34F26",
   CSS: "#1572B6",
+  Vite: "#646CFF",
+  "React Router": "#CA4245",
 };
 
 export function TechIcon({ name, className }: { name: string; className?: string }) {
