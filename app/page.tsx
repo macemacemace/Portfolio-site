@@ -4,7 +4,7 @@ import TechChip from "@/components/TechChip";
 import PixelText from "@/components/PixelText";
 import PhotoRotator from "@/components/PhotoRotator";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
-import { FiDownload, FiChevronDown, FiMapPin } from "react-icons/fi";
+import { FiFileText, FiChevronDown, FiMapPin } from "react-icons/fi";
 
 const technologies = [
   "JavaScript",
@@ -78,11 +78,12 @@ export default function Home() {
             </a>
             <a
               href="/cv.pdf"
-              download
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-on-accent transition-opacity hover:opacity-90"
             >
-              <FiDownload className="h-4 w-4" />
-              Download CV
+              <FiFileText className="h-4 w-4" />
+              View CV
             </a>
           </div>
         </div>
